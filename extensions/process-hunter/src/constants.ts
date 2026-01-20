@@ -33,19 +33,19 @@ export const DEV_SERVER_PROCESSES = [
 ] as const;
 
 export const TERMINAL_APPS: Record<string, { displayName: string; icon: string }> = {
-  Warp: { displayName: "Warp", icon: "warp-icon.png" },
-  warp: { displayName: "Warp", icon: "warp-icon.png" },
-  Code: { displayName: "VS Code", icon: "vscode-icon.png" },
-  "Code Helper": { displayName: "VS Code", icon: "vscode-icon.png" },
-  "Code Helper (Renderer)": { displayName: "VS Code", icon: "vscode-icon.png" },
-  Electron: { displayName: "VS Code", icon: "vscode-icon.png" },
-  iTerm2: { displayName: "iTerm2", icon: "iterm-icon.png" },
-  iTerm: { displayName: "iTerm2", icon: "iterm-icon.png" },
-  Terminal: { displayName: "Terminal", icon: "terminal-icon.png" },
-  Hyper: { displayName: "Hyper", icon: "hyper-icon.png" },
-  hyper: { displayName: "Hyper", icon: "hyper-icon.png" },
-  alacritty: { displayName: "Alacritty", icon: "alacritty-icon.png" },
-  kitty: { displayName: "Kitty", icon: "kitty-icon.png" },
+  Warp: { displayName: "Warp", icon: "terminal" },
+  warp: { displayName: "Warp", icon: "terminal" },
+  Code: { displayName: "VS Code", icon: "code" },
+  "Code Helper": { displayName: "VS Code", icon: "code" },
+  "Code Helper (Renderer)": { displayName: "VS Code", icon: "code" },
+  Electron: { displayName: "VS Code", icon: "code" },
+  iTerm2: { displayName: "iTerm2", icon: "terminal" },
+  iTerm: { displayName: "iTerm2", icon: "terminal" },
+  Terminal: { displayName: "Terminal", icon: "terminal" },
+  Hyper: { displayName: "Hyper", icon: "terminal" },
+  hyper: { displayName: "Hyper", icon: "terminal" },
+  alacritty: { displayName: "Alacritty", icon: "terminal" },
+  kitty: { displayName: "Kitty", icon: "terminal" },
 };
 
 export const DEFAULT_REFRESH_INTERVAL_MS = 3000;

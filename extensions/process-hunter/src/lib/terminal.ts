@@ -51,7 +51,7 @@ export async function findTerminalApp(pid: number): Promise<TerminalInfo> {
 
   return {
     name: "Detached",
-    icon: "orphan-icon.png",
+    icon: "warning",
     isOrphaned: true,
   };
 }

@@ -60,7 +60,7 @@ export function useProcesses() {
       // Show skeleton UI immediately under "Detached" (we'll fix grouping later)
       const skeletonGroup: TerminalGroup = {
         name: "Detached",
-        icon: "orphan-icon.png",
+        icon: "warning",
         processes: skeletonProcesses,
         isOrphaned: true,
       };
