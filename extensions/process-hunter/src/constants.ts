@@ -1,0 +1,53 @@
+export const DEV_SERVER_PROCESSES = [
+  "node",
+  "npm",
+  "npx",
+  "yarn",
+  "pnpm",
+  "python",
+  "python3",
+  "ruby",
+  "rails",
+  "go",
+  "java",
+  "gradle",
+  "mvn",
+  "mvnw",
+  "php",
+  "php-fpm",
+  "cargo",
+  "deno",
+  "bun",
+  "vite",
+  "next",
+  "nuxt",
+  "webpack",
+  "esbuild",
+  "parcel",
+  "flask",
+  "django",
+  "uvicorn",
+  "gunicorn",
+  "puma",
+  "unicorn",
+] as const;
+
+export const TERMINAL_APPS: Record<string, { displayName: string; icon: string }> = {
+  Warp: { displayName: "Warp", icon: "warp-icon.png" },
+  warp: { displayName: "Warp", icon: "warp-icon.png" },
+  Code: { displayName: "VS Code", icon: "vscode-icon.png" },
+  "Code Helper": { displayName: "VS Code", icon: "vscode-icon.png" },
+  "Code Helper (Renderer)": { displayName: "VS Code", icon: "vscode-icon.png" },
+  Electron: { displayName: "VS Code", icon: "vscode-icon.png" },
+  iTerm2: { displayName: "iTerm2", icon: "iterm-icon.png" },
+  iTerm: { displayName: "iTerm2", icon: "iterm-icon.png" },
+  Terminal: { displayName: "Terminal", icon: "terminal-icon.png" },
+  Hyper: { displayName: "Hyper", icon: "hyper-icon.png" },
+  hyper: { displayName: "Hyper", icon: "hyper-icon.png" },
+  alacritty: { displayName: "Alacritty", icon: "alacritty-icon.png" },
+  kitty: { displayName: "Kitty", icon: "kitty-icon.png" },
+};
+
+export const DEFAULT_REFRESH_INTERVAL_MS = 3000;
+export const DEFAULT_KILL_TIMEOUT_MS = 5000;
+export const KILL_CHECK_INTERVAL_MS = 500;

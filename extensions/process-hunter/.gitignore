@@ -1,0 +1,13 @@
+# Apex
+.apex/
+.apex-hooks/
+results/runs/
+*.apex-backup
+
+# Claude/Factory
+.claude/
+.factory/
+
+# Build
+node_modules/
+dist/
