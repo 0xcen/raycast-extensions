@@ -38,8 +38,7 @@ export function parseEtime(etime: string): Date {
   return new Date(Date.now() - seconds * 1000);
 }
 
-export function formatUptime(etime: string): string {
-  const startTime = parseEtime(etime);
+export function formatUptimeFromDate(startTime: Date): string {
   const seconds = Math.floor((Date.now() - startTime.getTime()) / 1000);
 
   if (seconds < 60) return `${seconds}s`;
@@ -53,6 +52,10 @@ export function formatUptime(etime: string): string {
   const days = Math.floor(seconds / 86400);
   const hours = Math.floor((seconds % 86400) / 3600);
   return `${days}d ${hours}h`;
+}
+
+export function formatUptime(etime: string): string {
+  return formatUptimeFromDate(parseEtime(etime));
 }
 
 export function sleep(ms: number): Promise<void> {

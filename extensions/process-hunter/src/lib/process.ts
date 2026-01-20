@@ -114,6 +114,43 @@ export async function getBulkProcessDetails(
   }
 }
 
+export interface ProcessStats {
+  pid: number;
+  cpu: number;
+  memoryMB: number;
+  uptime: string;
+}
+
+export async function getBulkProcessStats(pids: number[]): Promise<Map<number, ProcessStats>> {
+  const stats = new Map<number, ProcessStats>();
+  if (pids.length === 0) return stats;
+
+  try {
+    const pidList = pids.join(",");
+    const output = await execPromise(`/bin/ps -p ${pidList} -o pid=,%cpu=,rss=,etime=`);
+
+    for (const line of output.trim().split("\n")) {
+      if (!line.trim()) continue;
+      const match = line.trim().match(/^(\d+)\s+([\d.]+)\s+(\d+)\s+(\S+)$/);
+      if (!match) continue;
+
+      const [, pidStr, cpuStr, rssStr, etime] = match;
+      const pid = parseInt(pidStr, 10);
+
+      stats.set(pid, {
+        pid,
+        cpu: parseFloat(cpuStr) || 0,
+        memoryMB: Math.round(parseInt(rssStr, 10) / 1024),
+        uptime: formatUptime(etime),
+      });
+    }
+  } catch {
+    // Ignore errors
+  }
+
+  return stats;
+}
+
 export async function getProcessCwd(pid: number): Promise<string> {
   try {
     const output = await execPromise(`/usr/sbin/lsof -p ${pid} -Fn 2>/dev/null`);
